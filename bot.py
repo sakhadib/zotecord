@@ -1,6 +1,6 @@
 import discord
 import asyncio
-from zotero_reader import get_annotations_by_key
+from zotero_reader import get_annotations_by_key, get_item_metadata
 import config
 
 # ───────────────────────────────────────────────────────────────────────────────
@@ -77,6 +77,11 @@ async def on_message(message: discord.Message):
         if color in buckets:
             buckets[color].append(text)
 
+    # Fetch metadata for the paper
+    metadata = get_item_metadata(item_key)
+    title = metadata.get("title") or item_key
+    url = metadata.get("url")
+
     # Post each bucket to its designated channel
     for color_name, texts in buckets.items():
         if not texts:
@@ -102,6 +107,11 @@ async def on_message(message: discord.Message):
                 continue
 
         # Send a header + each highlight as its own message
+        # First message for this paper in this channel
+        # Use human-friendly label (e.g. methods, results) instead of color name
+        label = config.COLOR_LABEL_MAP.get(color_name, color_name)
+        header_intro = f"@sakhadib found '{label}' in the paper {f'[{title}]({url})' if url else title}"
+        await target_channel.send(header_intro)
         header = f"📌 **{color_name.upper()}** highlights for **{item_key}**:"
         await target_channel.send(header)
         for highlight_text in texts:
