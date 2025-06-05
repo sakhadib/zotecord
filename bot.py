@@ -21,10 +21,14 @@ intents.message_content = True   # <-- Required to read message.content
 client = discord.Client(intents=intents)
 
 
+SAKHA_ID = config.DISCORD_USER_ID
+user_mention = f"<@{SAKHA_ID}>"
+
+
 @client.event
 async def on_ready():
     print(f"✅ Logged in as {client.user} (ID: {client.user.id})")
-    print("Bot is ready to receive \\pullkey commands.")
+    print("Bot is ready to receive \\pull commands.")
 
 
 @client.event
@@ -38,12 +42,12 @@ async def on_message(message: discord.Message):
 
     content = message.content.strip()
     # Only respond to messages that start exactly with "\pullkey "
-    if not content.lower().startswith(r"\pullkey "):
+    if not content.lower().startswith(r"\pull "):
         return
 
     parts = content.split(maxsplit=1)
     if len(parts) < 2 or not parts[1].strip():
-        await message.channel.send("⚠️ Usage: `\\pullkey <ZoteroAttachmentKey>` (e.g. `\\pullkey RFCM2DHI`)")
+        await message.channel.send("⚠️ Usage: `\\pull <ZoteroAttachmentKey>` (e.g. `\\pull RFCM2DHI`)")
         return
 
     item_key = parts[1].strip()
@@ -106,20 +110,17 @@ async def on_message(message: discord.Message):
                 )
                 continue
 
-        # Send a header + each highlight as its own message
-        # First message for this paper in this channel
-        # Use human-friendly label (e.g. methods, results) instead of color name
+        # Send a single formatted message with numbered highlights and a spacer
         label = config.COLOR_LABEL_MAP.get(color_name, color_name)
-        header_intro = f"@sakhadib found '{label}' in the paper {f'[{title}]({url})' if url else title}"
-        await target_channel.send(header_intro)
-        header = f"📌 **{color_name.upper()}** highlights for **{item_key}**:"
-        await target_channel.send(header)
-        for highlight_text in texts:
-            snippet = highlight_text if len(highlight_text) <= 1900 else highlight_text[:1900] + "…"
-            await target_channel.send(f"> {snippet}")
-
-        # Short pause so Discord doesn’t rate-limit us
-        await asyncio.sleep(0.5)
+        intro = f"{user_mention} found '{label}' in the paper {f'[{title}]({url})' if url else title}"
+        # Build numbered bullet list of highlights
+        bullets = "\n".join(f"{i}. {text}" for i, text in enumerate(texts, start=1))
+        # Send intro message
+        await target_channel.send(f"{intro} ")
+        # Send findings in a second message
+        await target_channel.send(f"{bullets}")
+        # Spacer for visual gap before next paper
+        await target_channel.send("\u200b")
 
     # Notify the user that we’re done
     await message.channel.send("✅ Finished pushing all found highlights.")
