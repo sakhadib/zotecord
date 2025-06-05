@@ -1,0 +1,5 @@
+🔍 Starting Zotero debug run
+→ Using Zotero DB at: C:\Users\sakha\Zotero\zotero.sqlite
+→ Looking up itemKey: RFCM2DHI
+⚠️ No itemID found for key 'RFCM2DHI'.
+   → Possible reasons: invalid key, or this item is not a PDF attachment (itemTypeID ≠ 35).

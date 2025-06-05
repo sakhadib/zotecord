@@ -1,0 +1,1970 @@
+--- SQLite Dump of C:\Users\sakha\Zotero\zotero.sqlite (first 5 rows per table) ---
+
+#
+# Schema Objects (sqlite_master)
+#
+• TYPE: index
+  NAME: baseFieldMappingsCombined_baseFieldID
+  TABLE: baseFieldMappingsCombined
+  SQL:
+    CREATE INDEX baseFieldMappingsCombined_baseFieldID ON baseFieldMappingsCombined(baseFieldID)
+
+• TYPE: index
+  NAME: baseFieldMappingsCombined_fieldID
+  TABLE: baseFieldMappingsCombined
+  SQL:
+    CREATE INDEX baseFieldMappingsCombined_fieldID ON baseFieldMappingsCombined(fieldID)
+
+• TYPE: index
+  NAME: baseFieldMappings_baseFieldID
+  TABLE: baseFieldMappings
+  SQL:
+    CREATE INDEX baseFieldMappings_baseFieldID ON baseFieldMappings(baseFieldID)
+
+• TYPE: index
+  NAME: baseFieldMappings_fieldID
+  TABLE: baseFieldMappings
+  SQL:
+    CREATE INDEX baseFieldMappings_fieldID ON baseFieldMappings(fieldID)
+
+• TYPE: index
+  NAME: charsets_charset
+  TABLE: charsets
+  SQL:
+    CREATE INDEX charsets_charset ON charsets(charset)
+
+• TYPE: index
+  NAME: collectionItems_itemID
+  TABLE: collectionItems
+  SQL:
+    CREATE INDEX collectionItems_itemID ON collectionItems(itemID)
+
+• TYPE: index
+  NAME: collectionRelations_object
+  TABLE: collectionRelations
+  SQL:
+    CREATE INDEX collectionRelations_object ON collectionRelations(object)
+
+• TYPE: index
+  NAME: collectionRelations_predicateID
+  TABLE: collectionRelations
+  SQL:
+    CREATE INDEX collectionRelations_predicateID ON collectionRelations(predicateID)
+
+• TYPE: index
+  NAME: collections_synced
+  TABLE: collections
+  SQL:
+    CREATE INDEX collections_synced ON collections(synced)
+
+• TYPE: index
+  NAME: customBaseFieldMappings_baseFieldID
+  TABLE: customBaseFieldMappings
+  SQL:
+    CREATE INDEX customBaseFieldMappings_baseFieldID ON customBaseFieldMappings(baseFieldID)
+
+• TYPE: index
+  NAME: customBaseFieldMappings_customFieldID
+  TABLE: customBaseFieldMappings
+  SQL:
+    CREATE INDEX customBaseFieldMappings_customFieldID ON customBaseFieldMappings(customFieldID)
+
+• TYPE: index
+  NAME: customItemTypeFields_customFieldID
+  TABLE: customItemTypeFields
+  SQL:
+    CREATE INDEX customItemTypeFields_customFieldID ON customItemTypeFields(customFieldID)
+
+• TYPE: index
+  NAME: customItemTypeFields_fieldID
+  TABLE: customItemTypeFields
+  SQL:
+    CREATE INDEX customItemTypeFields_fieldID ON customItemTypeFields(fieldID)
+
+• TYPE: index
+  NAME: deletedCollections_dateDeleted
+  TABLE: deletedCollections
+  SQL:
+    CREATE INDEX deletedCollections_dateDeleted ON deletedCollections(dateDeleted)
+
+• TYPE: index
+  NAME: deletedItems_dateDeleted
+  TABLE: deletedItems
+  SQL:
+    CREATE INDEX deletedItems_dateDeleted ON deletedItems(dateDeleted)
+
+• TYPE: index
+  NAME: deletedSearches_dateDeleted
+  TABLE: deletedItems
+  SQL:
+    CREATE INDEX deletedSearches_dateDeleted ON deletedItems(dateDeleted)
+
+• TYPE: index
+  NAME: fileTypeMimeTypes_mimeType
+  TABLE: fileTypeMimeTypes
+  SQL:
+    CREATE INDEX fileTypeMimeTypes_mimeType ON fileTypeMimeTypes(mimeType)
+
+• TYPE: index
+  NAME: fileTypes_fileType
+  TABLE: fileTypes
+  SQL:
+    CREATE INDEX fileTypes_fileType ON fileTypes(fileType)
+
+• TYPE: index
+  NAME: fulltextItemWords_itemID
+  TABLE: fulltextItemWords
+  SQL:
+    CREATE INDEX fulltextItemWords_itemID ON fulltextItemWords(itemID)
+
+• TYPE: index
+  NAME: fulltextItems_synced
+  TABLE: fulltextItems
+  SQL:
+    CREATE INDEX fulltextItems_synced ON fulltextItems(synced)
+
+• TYPE: index
+  NAME: fulltextItems_version
+  TABLE: fulltextItems
+  SQL:
+    CREATE INDEX fulltextItems_version ON fulltextItems(version)
+
+• TYPE: index
+  NAME: itemAnnotations_parentItemID
+  TABLE: itemAnnotations
+  SQL:
+    CREATE INDEX itemAnnotations_parentItemID ON itemAnnotations(parentItemID)
+
+• TYPE: index
+  NAME: itemAttachments_charsetID
+  TABLE: itemAttachments
+  SQL:
+    CREATE INDEX itemAttachments_charsetID ON itemAttachments(charsetID)
+
+• TYPE: index
+  NAME: itemAttachments_contentType
+  TABLE: itemAttachments
+  SQL:
+    CREATE INDEX itemAttachments_contentType ON itemAttachments(contentType)
+
+• TYPE: index
+  NAME: itemAttachments_lastProcessedModificationTime
+  TABLE: itemAttachments
+  SQL:
+    CREATE INDEX itemAttachments_lastProcessedModificationTime ON itemAttachments(lastProcessedModificationTime)
+
+• TYPE: index
+  NAME: itemAttachments_parentItemID
+  TABLE: itemAttachments
+  SQL:
+    CREATE INDEX itemAttachments_parentItemID ON itemAttachments(parentItemID)
+
+• TYPE: index
+  NAME: itemAttachments_syncState
+  TABLE: itemAttachments
+  SQL:
+    CREATE INDEX itemAttachments_syncState ON itemAttachments(syncState)
+
+• TYPE: index
+  NAME: itemCreators_creatorTypeID
+  TABLE: itemCreators
+  SQL:
+    CREATE INDEX itemCreators_creatorTypeID ON itemCreators(creatorTypeID)
+
+• TYPE: index
+  NAME: itemData_fieldID
+  TABLE: itemData
+  SQL:
+    CREATE INDEX itemData_fieldID ON itemData(fieldID)
+
+• TYPE: index
+  NAME: itemData_valueID
+  TABLE: itemData
+  SQL:
+    CREATE INDEX itemData_valueID ON itemData(valueID)
+
+• TYPE: index
+  NAME: itemNotes_parentItemID
+  TABLE: itemNotes
+  SQL:
+    CREATE INDEX itemNotes_parentItemID ON itemNotes(parentItemID)
+
+• TYPE: index
+  NAME: itemRelations_object
+  TABLE: itemRelations
+  SQL:
+    CREATE INDEX itemRelations_object ON itemRelations(object)
+
+• TYPE: index
+  NAME: itemRelations_predicateID
+  TABLE: itemRelations
+  SQL:
+    CREATE INDEX itemRelations_predicateID ON itemRelations(predicateID)
+
+• TYPE: index
+  NAME: itemTags_tagID
+  TABLE: itemTags
+  SQL:
+    CREATE INDEX itemTags_tagID ON itemTags(tagID)
+
+• TYPE: index
+  NAME: itemTypeCreatorTypes_creatorTypeID
+  TABLE: itemTypeCreatorTypes
+  SQL:
+    CREATE INDEX itemTypeCreatorTypes_creatorTypeID ON itemTypeCreatorTypes(creatorTypeID)
+
+• TYPE: index
+  NAME: itemTypeFieldsCombined_fieldID
+  TABLE: itemTypeFieldsCombined
+  SQL:
+    CREATE INDEX itemTypeFieldsCombined_fieldID ON itemTypeFieldsCombined(fieldID)
+
+• TYPE: index
+  NAME: itemTypeFields_fieldID
+  TABLE: itemTypeFields
+  SQL:
+    CREATE INDEX itemTypeFields_fieldID ON itemTypeFields(fieldID)
+
+• TYPE: index
+  NAME: items_synced
+  TABLE: items
+  SQL:
+    CREATE INDEX items_synced ON items(synced)
+
+• TYPE: index
+  NAME: proxyHosts_proxyID
+  TABLE: proxyHosts
+  SQL:
+    CREATE INDEX proxyHosts_proxyID ON proxyHosts(proxyID)
+
+• TYPE: index
+  NAME: savedSearches_synced
+  TABLE: savedSearches
+  SQL:
+    CREATE INDEX savedSearches_synced ON savedSearches(synced)
+
+• TYPE: index
+  NAME: schema
+  TABLE: version
+  SQL:
+    CREATE INDEX schema ON version(schema)
+
+• TYPE: index
+  NAME: sqlite_autoindex_baseFieldMappingsCombined_1
+  TABLE: baseFieldMappingsCombined
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_baseFieldMappings_1
+  TABLE: baseFieldMappings
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_charsets_1
+  TABLE: charsets
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_collectionItems_1
+  TABLE: collectionItems
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_collectionRelations_1
+  TABLE: collectionRelations
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_collections_1
+  TABLE: collections
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_creators_1
+  TABLE: creators
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_customBaseFieldMappings_1
+  TABLE: customBaseFieldMappings
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_customItemTypeFields_1
+  TABLE: customItemTypeFields
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_feedItems_1
+  TABLE: feedItems
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_feeds_1
+  TABLE: feeds
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_fieldsCombined_1
+  TABLE: fieldsCombined
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_fileTypeMimeTypes_1
+  TABLE: fileTypeMimeTypes
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_fileTypes_1
+  TABLE: fileTypes
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_fulltextItemWords_1
+  TABLE: fulltextItemWords
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_fulltextWords_1
+  TABLE: fulltextWords
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_groups_1
+  TABLE: groups
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_itemCreators_1
+  TABLE: itemCreators
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_itemCreators_2
+  TABLE: itemCreators
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_itemDataValues_1
+  TABLE: itemDataValues
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_itemData_1
+  TABLE: itemData
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_itemRelations_1
+  TABLE: itemRelations
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_itemTags_1
+  TABLE: itemTags
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_itemTypeCreatorTypes_1
+  TABLE: itemTypeCreatorTypes
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_itemTypeFieldsCombined_1
+  TABLE: itemTypeFieldsCombined
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_itemTypeFieldsCombined_2
+  TABLE: itemTypeFieldsCombined
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_itemTypeFields_1
+  TABLE: itemTypeFields
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_itemTypeFields_2
+  TABLE: itemTypeFields
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_itemTypesCombined_1
+  TABLE: itemTypesCombined
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_items_1
+  TABLE: items
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_relationPredicates_1
+  TABLE: relationPredicates
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_savedSearchConditions_1
+  TABLE: savedSearchConditions
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_savedSearches_1
+  TABLE: savedSearches
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_settings_1
+  TABLE: settings
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_storageDeleteLog_1
+  TABLE: storageDeleteLog
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_syncCache_1
+  TABLE: syncCache
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_syncDeleteLog_1
+  TABLE: syncDeleteLog
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_syncQueue_1
+  TABLE: syncQueue
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_syncedSettings_1
+  TABLE: syncedSettings
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_tags_1
+  TABLE: tags
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_translatorCache_1
+  TABLE: translatorCache
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: sqlite_autoindex_version_1
+  TABLE: version
+  SQL:
+    <NULL>
+
+• TYPE: index
+  NAME: syncObjectTypes_name
+  TABLE: syncObjectTypes
+  SQL:
+    CREATE INDEX syncObjectTypes_name ON syncObjectTypes(name)
+
+• TYPE: table
+  NAME: baseFieldMappings
+  TABLE: baseFieldMappings
+  SQL:
+    CREATE TABLE baseFieldMappings (    itemTypeID INT,    baseFieldID INT,    fieldID INT,    PRIMARY KEY (itemTypeID, baseFieldID, fieldID),    FOREIGN KEY (itemTypeID) REFERENCES itemTypes(itemTypeID),    FOREIGN KEY (baseFieldID) REFERENCES fields(fieldID),    FOREIGN KEY (fieldID) REFERENCES fields(fieldID))
+
+• TYPE: table
+  NAME: baseFieldMappingsCombined
+  TABLE: baseFieldMappingsCombined
+  SQL:
+    CREATE TABLE baseFieldMappingsCombined (    itemTypeID INT,    baseFieldID INT,    fieldID INT,    PRIMARY KEY (itemTypeID, baseFieldID, fieldID))
+
+• TYPE: table
+  NAME: charsets
+  TABLE: charsets
+  SQL:
+    CREATE TABLE charsets (    charsetID INTEGER PRIMARY KEY,    charset TEXT UNIQUE)
+
+• TYPE: table
+  NAME: collectionItems
+  TABLE: collectionItems
+  SQL:
+    CREATE TABLE collectionItems (    collectionID INT NOT NULL,    itemID INT NOT NULL,    orderIndex INT NOT NULL DEFAULT 0,    PRIMARY KEY (collectionID, itemID),    FOREIGN KEY (collectionID) REFERENCES collections(collectionID) ON DELETE CASCADE,    FOREIGN KEY (itemID) REFERENCES items(itemID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: collectionRelations
+  TABLE: collectionRelations
+  SQL:
+    CREATE TABLE collectionRelations (    collectionID INT NOT NULL,    predicateID INT NOT NULL,    object TEXT NOT NULL,    PRIMARY KEY (collectionID, predicateID, object),    FOREIGN KEY (collectionID) REFERENCES collections(collectionID) ON DELETE CASCADE,    FOREIGN KEY (predicateID) REFERENCES relationPredicates(predicateID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: collections
+  TABLE: collections
+  SQL:
+    CREATE TABLE collections (    collectionID INTEGER PRIMARY KEY,    collectionName TEXT NOT NULL,    parentCollectionID INT DEFAULT NULL,    clientDateModified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,    libraryID INT NOT NULL,    key TEXT NOT NULL,    version INT NOT NULL DEFAULT 0,    synced INT NOT NULL DEFAULT 0,    UNIQUE (libraryID, key),    FOREIGN KEY (libraryID) REFERENCES libraries(libraryID) ON DELETE CASCADE,    FOREIGN KEY (parentCollectionID) REFERENCES collections(collectionID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: creatorTypes
+  TABLE: creatorTypes
+  SQL:
+    CREATE TABLE creatorTypes (    creatorTypeID INTEGER PRIMARY KEY,    creatorType TEXT)
+
+• TYPE: table
+  NAME: creators
+  TABLE: creators
+  SQL:
+    CREATE TABLE creators (    creatorID INTEGER PRIMARY KEY,    firstName TEXT,    lastName TEXT,    fieldMode INT,    UNIQUE (lastName, firstName, fieldMode))
+
+• TYPE: table
+  NAME: customBaseFieldMappings
+  TABLE: customBaseFieldMappings
+  SQL:
+    CREATE TABLE customBaseFieldMappings (    customItemTypeID INT,    baseFieldID INT,    customFieldID INT,    PRIMARY KEY (customItemTypeID, baseFieldID, customFieldID),    FOREIGN KEY (customItemTypeID) REFERENCES customItemTypes(customItemTypeID),    FOREIGN KEY (baseFieldID) REFERENCES fields(fieldID),    FOREIGN KEY (customFieldID) REFERENCES customFields(customFieldID))
+
+• TYPE: table
+  NAME: customFields
+  TABLE: customFields
+  SQL:
+    CREATE TABLE customFields (    customFieldID INTEGER PRIMARY KEY,    fieldName TEXT,    label TEXT)
+
+• TYPE: table
+  NAME: customItemTypeFields
+  TABLE: customItemTypeFields
+  SQL:
+    CREATE TABLE customItemTypeFields (    customItemTypeID INT NOT NULL,    fieldID INT,    customFieldID INT,    hide INT NOT NULL,    orderIndex INT NOT NULL,    PRIMARY KEY (customItemTypeID, orderIndex),    FOREIGN KEY (customItemTypeID) REFERENCES customItemTypes(customItemTypeID),    FOREIGN KEY (fieldID) REFERENCES fields(fieldID),    FOREIGN KEY (customFieldID) REFERENCES customFields(customFieldID))
+
+• TYPE: table
+  NAME: customItemTypes
+  TABLE: customItemTypes
+  SQL:
+    CREATE TABLE customItemTypes (    customItemTypeID INTEGER PRIMARY KEY,    typeName TEXT,    label TEXT,    display INT DEFAULT 1,     icon TEXT)
+
+• TYPE: table
+  NAME: dbDebug1
+  TABLE: dbDebug1
+  SQL:
+    CREATE TABLE dbDebug1 (    a INTEGER PRIMARY KEY)
+
+• TYPE: table
+  NAME: deletedCollections
+  TABLE: deletedCollections
+  SQL:
+    CREATE TABLE deletedCollections (    collectionID INTEGER PRIMARY KEY,    dateDeleted DEFAULT CURRENT_TIMESTAMP NOT NULL,    FOREIGN KEY (collectionID) REFERENCES collections(collectionID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: deletedItems
+  TABLE: deletedItems
+  SQL:
+    CREATE TABLE deletedItems (    itemID INTEGER PRIMARY KEY,    dateDeleted DEFAULT CURRENT_TIMESTAMP NOT NULL,    FOREIGN KEY (itemID) REFERENCES items(itemID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: deletedSearches
+  TABLE: deletedSearches
+  SQL:
+    CREATE TABLE deletedSearches (    savedSearchID INTEGER PRIMARY KEY,    dateDeleted DEFAULT CURRENT_TIMESTAMP NOT NULL,    FOREIGN KEY (savedSearchID) REFERENCES savedSearches(savedSearchID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: feedItems
+  TABLE: feedItems
+  SQL:
+    CREATE TABLE feedItems (    itemID INTEGER PRIMARY KEY,    guid TEXT NOT NULL UNIQUE,    readTime TIMESTAMP,    translatedTime TIMESTAMP,    FOREIGN KEY (itemID) REFERENCES items(itemID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: feeds
+  TABLE: feeds
+  SQL:
+    CREATE TABLE feeds (    libraryID INTEGER PRIMARY KEY,    name TEXT NOT NULL,    url TEXT NOT NULL UNIQUE,    lastUpdate TIMESTAMP,    lastCheck TIMESTAMP,    lastCheckError TEXT,    cleanupReadAfter INT,    cleanupUnreadAfter INT,    refreshInterval INT,    FOREIGN KEY (libraryID) REFERENCES libraries(libraryID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: fieldFormats
+  TABLE: fieldFormats
+  SQL:
+    CREATE TABLE fieldFormats (    fieldFormatID INTEGER PRIMARY KEY,    regex TEXT,    isInteger INT)
+
+• TYPE: table
+  NAME: fields
+  TABLE: fields
+  SQL:
+    CREATE TABLE fields (    fieldID INTEGER PRIMARY KEY,    fieldName TEXT,    fieldFormatID INT,    FOREIGN KEY (fieldFormatID) REFERENCES fieldFormats(fieldFormatID))
+
+• TYPE: table
+  NAME: fieldsCombined
+  TABLE: fieldsCombined
+  SQL:
+    CREATE TABLE fieldsCombined (    fieldID INT NOT NULL,    fieldName TEXT NOT NULL,    label TEXT,    fieldFormatID INT,    custom INT NOT NULL,    PRIMARY KEY (fieldID))
+
+• TYPE: table
+  NAME: fileTypeMimeTypes
+  TABLE: fileTypeMimeTypes
+  SQL:
+    CREATE TABLE fileTypeMimeTypes (    fileTypeID INT,    mimeType TEXT,    PRIMARY KEY (fileTypeID, mimeType),    FOREIGN KEY (fileTypeID) REFERENCES fileTypes(fileTypeID))
+
+• TYPE: table
+  NAME: fileTypes
+  TABLE: fileTypes
+  SQL:
+    CREATE TABLE fileTypes (    fileTypeID INTEGER PRIMARY KEY,    fileType TEXT UNIQUE)
+
+• TYPE: table
+  NAME: fulltextItemWords
+  TABLE: fulltextItemWords
+  SQL:
+    CREATE TABLE fulltextItemWords (    wordID INT,    itemID INT,    PRIMARY KEY (wordID, itemID),    FOREIGN KEY (wordID) REFERENCES fulltextWords(wordID),    FOREIGN KEY (itemID) REFERENCES items(itemID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: fulltextItems
+  TABLE: fulltextItems
+  SQL:
+    CREATE TABLE fulltextItems (    itemID INTEGER PRIMARY KEY,    indexedPages INT,    totalPages INT,    indexedChars INT,    totalChars INT,    version INT NOT NULL DEFAULT 0,    synced INT NOT NULL DEFAULT 0,    FOREIGN KEY (itemID) REFERENCES items(itemID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: fulltextWords
+  TABLE: fulltextWords
+  SQL:
+    CREATE TABLE fulltextWords (    wordID INTEGER PRIMARY KEY,    word TEXT UNIQUE)
+
+• TYPE: table
+  NAME: groupItems
+  TABLE: groupItems
+  SQL:
+    CREATE TABLE groupItems (    itemID INTEGER PRIMARY KEY,    createdByUserID INT,    lastModifiedByUserID INT,    FOREIGN KEY (itemID) REFERENCES items(itemID) ON DELETE CASCADE,    FOREIGN KEY (createdByUserID) REFERENCES users(userID) ON DELETE SET NULL,    FOREIGN KEY (lastModifiedByUserID) REFERENCES users(userID) ON DELETE SET NULL)
+
+• TYPE: table
+  NAME: groups
+  TABLE: groups
+  SQL:
+    CREATE TABLE groups (    groupID INTEGER PRIMARY KEY,    libraryID INT NOT NULL UNIQUE,    name TEXT NOT NULL,    description TEXT NOT NULL,    version INT NOT NULL,    FOREIGN KEY (libraryID) REFERENCES libraries(libraryID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: itemAnnotations
+  TABLE: itemAnnotations
+  SQL:
+    CREATE TABLE itemAnnotations (    itemID INTEGER PRIMARY KEY,    parentItemID INT NOT NULL,    type INTEGER NOT NULL,    authorName TEXT,    text TEXT,    comment TEXT,    color TEXT,    pageLabel TEXT,    sortIndex TEXT NOT NULL,    position TEXT NOT NULL,    isExternal INT NOT NULL,    FOREIGN KEY (itemID) REFERENCES items(itemID) ON DELETE CASCADE,    FOREIGN KEY (parentItemID) REFERENCES itemAttachments(itemID))
+
+• TYPE: table
+  NAME: itemAttachments
+  TABLE: itemAttachments
+  SQL:
+    CREATE TABLE itemAttachments (    itemID INTEGER PRIMARY KEY,    parentItemID INT,    linkMode INT,    contentType TEXT,    charsetID INT,    path TEXT,    syncState INT DEFAULT 0,    storageModTime INT,    storageHash TEXT,    lastProcessedModificationTime INT,    FOREIGN KEY (itemID) REFERENCES items(itemID) ON DELETE CASCADE,    FOREIGN KEY (parentItemID) REFERENCES items(itemID) ON DELETE CASCADE,    FOREIGN KEY (charsetID) REFERENCES charsets(charsetID) ON DELETE SET NULL)
+
+• TYPE: table
+  NAME: itemCreators
+  TABLE: itemCreators
+  SQL:
+    CREATE TABLE itemCreators (    itemID INT NOT NULL,    creatorID INT NOT NULL,    creatorTypeID INT NOT NULL DEFAULT 1,    orderIndex INT NOT NULL DEFAULT 0,    PRIMARY KEY (itemID, creatorID, creatorTypeID, orderIndex),    UNIQUE (itemID, orderIndex),    FOREIGN KEY (itemID) REFERENCES items(itemID) ON DELETE CASCADE,    FOREIGN KEY (creatorID) REFERENCES creators(creatorID) ON DELETE CASCADE,    FOREIGN KEY (creatorTypeID) REFERENCES creatorTypes(creatorTypeID))
+
+• TYPE: table
+  NAME: itemData
+  TABLE: itemData
+  SQL:
+    CREATE TABLE itemData (    itemID INT,    fieldID INT,    valueID,    PRIMARY KEY (itemID, fieldID),    FOREIGN KEY (itemID) REFERENCES items(itemID) ON DELETE CASCADE,    FOREIGN KEY (fieldID) REFERENCES fieldsCombined(fieldID),    FOREIGN KEY (valueID) REFERENCES itemDataValues(valueID))
+
+• TYPE: table
+  NAME: itemDataValues
+  TABLE: itemDataValues
+  SQL:
+    CREATE TABLE itemDataValues (    valueID INTEGER PRIMARY KEY,    value UNIQUE)
+
+• TYPE: table
+  NAME: itemNotes
+  TABLE: itemNotes
+  SQL:
+    CREATE TABLE itemNotes (    itemID INTEGER PRIMARY KEY,    parentItemID INT,    note TEXT,    title TEXT,    FOREIGN KEY (itemID) REFERENCES items(itemID) ON DELETE CASCADE,    FOREIGN KEY (parentItemID) REFERENCES items(itemID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: itemRelations
+  TABLE: itemRelations
+  SQL:
+    CREATE TABLE itemRelations (    itemID INT NOT NULL,    predicateID INT NOT NULL,    object TEXT NOT NULL,    PRIMARY KEY (itemID, predicateID, object),    FOREIGN KEY (itemID) REFERENCES items(itemID) ON DELETE CASCADE,    FOREIGN KEY (predicateID) REFERENCES relationPredicates(predicateID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: itemTags
+  TABLE: itemTags
+  SQL:
+    CREATE TABLE itemTags (    itemID INT NOT NULL,    tagID INT NOT NULL,    type INT NOT NULL,    PRIMARY KEY (itemID, tagID),    FOREIGN KEY (itemID) REFERENCES items(itemID) ON DELETE CASCADE,    FOREIGN KEY (tagID) REFERENCES tags(tagID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: itemTypeCreatorTypes
+  TABLE: itemTypeCreatorTypes
+  SQL:
+    CREATE TABLE itemTypeCreatorTypes (    itemTypeID INT,    creatorTypeID INT,    primaryField INT,    PRIMARY KEY (itemTypeID, creatorTypeID),    FOREIGN KEY (itemTypeID) REFERENCES itemTypes(itemTypeID),    FOREIGN KEY (creatorTypeID) REFERENCES creatorTypes(creatorTypeID))
+
+• TYPE: table
+  NAME: itemTypeFields
+  TABLE: itemTypeFields
+  SQL:
+    CREATE TABLE itemTypeFields (    itemTypeID INT,    fieldID INT,    hide INT,    orderIndex INT,    PRIMARY KEY (itemTypeID, orderIndex),    UNIQUE (itemTypeID, fieldID),    FOREIGN KEY (itemTypeID) REFERENCES itemTypes(itemTypeID),    FOREIGN KEY (fieldID) REFERENCES fields(fieldID))
+
+• TYPE: table
+  NAME: itemTypeFieldsCombined
+  TABLE: itemTypeFieldsCombined
+  SQL:
+    CREATE TABLE itemTypeFieldsCombined (    itemTypeID INT NOT NULL,    fieldID INT NOT NULL,    hide INT,    orderIndex INT NOT NULL,    PRIMARY KEY (itemTypeID, orderIndex),    UNIQUE (itemTypeID, fieldID))
+
+• TYPE: table
+  NAME: itemTypes
+  TABLE: itemTypes
+  SQL:
+    CREATE TABLE itemTypes (    itemTypeID INTEGER PRIMARY KEY,    typeName TEXT,    templateItemTypeID INT,    display INT DEFAULT 1 )
+
+• TYPE: table
+  NAME: itemTypesCombined
+  TABLE: itemTypesCombined
+  SQL:
+    CREATE TABLE itemTypesCombined (    itemTypeID INT NOT NULL,    typeName TEXT NOT NULL,    display INT DEFAULT 1 NOT NULL,    custom INT NOT NULL,    PRIMARY KEY (itemTypeID))
+
+• TYPE: table
+  NAME: items
+  TABLE: items
+  SQL:
+    CREATE TABLE items (    itemID INTEGER PRIMARY KEY,    itemTypeID INT NOT NULL,    dateAdded TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,    dateModified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,    clientDateModified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,    libraryID INT NOT NULL,    key TEXT NOT NULL,    version INT NOT NULL DEFAULT 0,    synced INT NOT NULL DEFAULT 0,    UNIQUE (libraryID, key),    FOREIGN KEY (libraryID) REFERENCES libraries(libraryID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: libraries
+  TABLE: libraries
+  SQL:
+    CREATE TABLE libraries (    libraryID INTEGER PRIMARY KEY,    type TEXT NOT NULL,    editable INT NOT NULL,    filesEditable INT NOT NULL,    version INT NOT NULL DEFAULT 0,    storageVersion INT NOT NULL DEFAULT 0,    lastSync INT NOT NULL DEFAULT 0,    archived INT NOT NULL DEFAULT 0)
+
+• TYPE: table
+  NAME: proxies
+  TABLE: proxies
+  SQL:
+    CREATE TABLE proxies (    proxyID INTEGER PRIMARY KEY,    multiHost INT,    autoAssociate INT,    scheme TEXT)
+
+• TYPE: table
+  NAME: proxyHosts
+  TABLE: proxyHosts
+  SQL:
+    CREATE TABLE proxyHosts (    hostID INTEGER PRIMARY KEY,    proxyID INTEGER,    hostname TEXT,    FOREIGN KEY (proxyID) REFERENCES proxies(proxyID))
+
+• TYPE: table
+  NAME: publicationsItems
+  TABLE: publicationsItems
+  SQL:
+    CREATE TABLE publicationsItems (    itemID INTEGER PRIMARY KEY)
+
+• TYPE: table
+  NAME: relationPredicates
+  TABLE: relationPredicates
+  SQL:
+    CREATE TABLE relationPredicates (    predicateID INTEGER PRIMARY KEY,    predicate TEXT UNIQUE)
+
+• TYPE: table
+  NAME: retractedItems
+  TABLE: retractedItems
+  SQL:
+    CREATE TABLE retractedItems (	itemID INTEGER PRIMARY KEY,	data TEXT,	flag INT DEFAULT 0,	FOREIGN KEY (itemID) REFERENCES items(itemID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: savedSearchConditions
+  TABLE: savedSearchConditions
+  SQL:
+    CREATE TABLE savedSearchConditions (    savedSearchID INT NOT NULL,    searchConditionID INT NOT NULL,    condition TEXT NOT NULL,    operator TEXT,    value TEXT,    required NONE,    PRIMARY KEY (savedSearchID, searchConditionID),    FOREIGN KEY (savedSearchID) REFERENCES savedSearches(savedSearchID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: savedSearches
+  TABLE: savedSearches
+  SQL:
+    CREATE TABLE savedSearches (    savedSearchID INTEGER PRIMARY KEY,    savedSearchName TEXT NOT NULL,    clientDateModified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,    libraryID INT NOT NULL,    key TEXT NOT NULL,    version INT NOT NULL DEFAULT 0,    synced INT NOT NULL DEFAULT 0,    UNIQUE (libraryID, key),    FOREIGN KEY (libraryID) REFERENCES libraries(libraryID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: settings
+  TABLE: settings
+  SQL:
+    CREATE TABLE settings (    setting TEXT,    key TEXT,    value,    PRIMARY KEY (setting, key))
+
+• TYPE: table
+  NAME: storageDeleteLog
+  TABLE: storageDeleteLog
+  SQL:
+    CREATE TABLE storageDeleteLog (    libraryID INT NOT NULL,    key TEXT NOT NULL,    dateDeleted TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,    PRIMARY KEY (libraryID, key),    FOREIGN KEY (libraryID) REFERENCES libraries(libraryID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: syncCache
+  TABLE: syncCache
+  SQL:
+    CREATE TABLE syncCache (    libraryID INT NOT NULL,    key TEXT NOT NULL,    syncObjectTypeID INT NOT NULL,    version INT NOT NULL,    data TEXT,    PRIMARY KEY (libraryID, key, syncObjectTypeID, version),    FOREIGN KEY (libraryID) REFERENCES libraries(libraryID) ON DELETE CASCADE,    FOREIGN KEY (syncObjectTypeID) REFERENCES syncObjectTypes(syncObjectTypeID))
+
+• TYPE: table
+  NAME: syncDeleteLog
+  TABLE: syncDeleteLog
+  SQL:
+    CREATE TABLE syncDeleteLog (    syncObjectTypeID INT NOT NULL,    libraryID INT NOT NULL,    key TEXT NOT NULL,    dateDeleted TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,    UNIQUE (syncObjectTypeID, libraryID, key),    FOREIGN KEY (syncObjectTypeID) REFERENCES syncObjectTypes(syncObjectTypeID),    FOREIGN KEY (libraryID) REFERENCES libraries(libraryID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: syncObjectTypes
+  TABLE: syncObjectTypes
+  SQL:
+    CREATE TABLE syncObjectTypes (    syncObjectTypeID INTEGER PRIMARY KEY,    name TEXT)
+
+• TYPE: table
+  NAME: syncQueue
+  TABLE: syncQueue
+  SQL:
+    CREATE TABLE syncQueue (    libraryID INT NOT NULL,    key TEXT NOT NULL,    syncObjectTypeID INT NOT NULL,    lastCheck TIMESTAMP,    tries INT,    PRIMARY KEY (libraryID, key, syncObjectTypeID),    FOREIGN KEY (libraryID) REFERENCES libraries(libraryID) ON DELETE CASCADE,    FOREIGN KEY (syncObjectTypeID) REFERENCES syncObjectTypes(syncObjectTypeID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: syncedSettings
+  TABLE: syncedSettings
+  SQL:
+    CREATE TABLE syncedSettings (    setting TEXT NOT NULL,    libraryID INT NOT NULL,    value NOT NULL,    version INT NOT NULL DEFAULT 0,    synced INT NOT NULL DEFAULT 0,    PRIMARY KEY (setting, libraryID),    FOREIGN KEY (libraryID) REFERENCES libraries(libraryID) ON DELETE CASCADE)
+
+• TYPE: table
+  NAME: tags
+  TABLE: tags
+  SQL:
+    CREATE TABLE tags (    tagID INTEGER PRIMARY KEY,    name TEXT NOT NULL UNIQUE)
+
+• TYPE: table
+  NAME: translatorCache
+  TABLE: translatorCache
+  SQL:
+    CREATE TABLE translatorCache (    fileName TEXT PRIMARY KEY,    metadataJSON TEXT,    lastModifiedTime INT)
+
+• TYPE: table
+  NAME: users
+  TABLE: users
+  SQL:
+    CREATE TABLE users (    userID INTEGER PRIMARY KEY,    name TEXT NOT NULL)
+
+• TYPE: table
+  NAME: version
+  TABLE: version
+  SQL:
+    CREATE TABLE version (    schema TEXT PRIMARY KEY,    version INT NOT NULL)
+
+• TYPE: trigger
+  NAME: fki_collectionItems_itemID_parentItemID
+  TABLE: collectionItems
+  SQL:
+    CREATE TRIGGER fki_collectionItems_itemID_parentItemID  BEFORE INSERT ON collectionItems  FOR EACH ROW BEGIN    SELECT RAISE(ABORT, 'insert on table "collectionItems" violates foreign key constraint "fki_collectionItems_itemID_parentItemID"')    WHERE NEW.itemID IN (SELECT itemID FROM itemAttachments WHERE parentItemID IS NOT NULL UNION SELECT itemID FROM itemNotes WHERE parentItemID IS NOT NULL);  END
+
+• TYPE: trigger
+  NAME: fki_collectionItems_libraryID
+  TABLE: collectionItems
+  SQL:
+    CREATE TRIGGER fki_collectionItems_libraryID  BEFORE INSERT ON collectionItems  FOR EACH ROW BEGIN    SELECT RAISE(ABORT, 'insert on table "collectionItems" violates foreign key constraint "fki_collectionItems_libraryID"')    WHERE (SELECT libraryID FROM collections WHERE collectionID = NEW.collectionID) != (SELECT libraryID FROM items WHERE itemID = NEW.itemID);  END
+
+• TYPE: trigger
+  NAME: fki_collections_parentCollectionID_libraryID
+  TABLE: collections
+  SQL:
+    CREATE TRIGGER fki_collections_parentCollectionID_libraryID  BEFORE INSERT ON collections  FOR EACH ROW BEGIN    SELECT RAISE(ABORT, 'insert on table "collections" violates foreign key constraint "fki_collections_parentCollectionID_libraryID"')    WHERE NEW.parentCollectionID IS NOT NULL AND    NEW.libraryID != (SELECT libraryID FROM collections WHERE collectionID = NEW.parentCollectionID);  END
+
+• TYPE: trigger
+  NAME: fki_tagsBEFORE
+  TABLE: tags
+  SQL:
+    CREATE TRIGGER fki_tagsBEFORE INSERT ON tags  FOR EACH ROW BEGIN    SELECT RAISE(ABORT, 'Tag cannot be blank')    WHERE TRIM(NEW.name)='';  END
+
+• TYPE: trigger
+  NAME: fku_collectionItems_itemID_parentItemID
+  TABLE: collectionItems
+  SQL:
+    CREATE TRIGGER fku_collectionItems_itemID_parentItemID  BEFORE UPDATE OF itemID ON collectionItems  FOR EACH ROW BEGIN    SELECT RAISE(ABORT, 'update on table "collectionItems" violates foreign key constraint "fku_collectionItems_itemID_parentItemID"')    WHERE NEW.itemID IN (SELECT itemID FROM itemAttachments WHERE parentItemID IS NOT NULL UNION SELECT itemID FROM itemNotes WHERE parentItemID IS NOT NULL);  END
+
+• TYPE: trigger
+  NAME: fku_collectionItems_libraryID
+  TABLE: collectionItems
+  SQL:
+    CREATE TRIGGER fku_collectionItems_libraryID  BEFORE UPDATE ON collectionItems  FOR EACH ROW BEGIN    SELECT RAISE(ABORT, 'update on table "collectionItems" violates foreign key constraint "fku_collectionItems_libraryID"')    WHERE (SELECT libraryID FROM collections WHERE collectionID = NEW.collectionID) != (SELECT libraryID FROM items WHERE itemID = NEW.itemID);  END
+
+• TYPE: trigger
+  NAME: fku_collections_parentCollectionID_libraryID
+  TABLE: collections
+  SQL:
+    CREATE TRIGGER fku_collections_parentCollectionID_libraryID  BEFORE UPDATE ON collections  FOR EACH ROW BEGIN    SELECT RAISE(ABORT, 'update on table "collections" violates foreign key constraint "fku_collections_parentCollectionID_libraryID"')    WHERE NEW.parentCollectionID IS NOT NULL AND    NEW.libraryID != (SELECT libraryID FROM collections WHERE collectionID = NEW.parentCollectionID);  END
+
+• TYPE: trigger
+  NAME: fku_itemAttachments_parentItemID_collectionItems_itemID
+  TABLE: itemAttachments
+  SQL:
+    CREATE TRIGGER fku_itemAttachments_parentItemID_collectionItems_itemID  BEFORE UPDATE OF parentItemID ON itemAttachments  FOR EACH ROW WHEN OLD.parentItemID IS NULL AND NEW.parentItemID IS NOT NULL BEGIN    DELETE FROM collectionItems WHERE itemID = NEW.itemID;  END
+
+• TYPE: trigger
+  NAME: fku_itemNotes_parentItemID_collectionItems_itemID
+  TABLE: itemNotes
+  SQL:
+    CREATE TRIGGER fku_itemNotes_parentItemID_collectionItems_itemID  BEFORE UPDATE OF parentItemID ON itemNotes  FOR EACH ROW WHEN OLD.parentItemID IS NULL AND NEW.parentItemID IS NOT NULL BEGIN    DELETE FROM collectionItems WHERE itemID = NEW.itemID;  END
+
+• TYPE: trigger
+  NAME: fku_tags
+  TABLE: tags
+  SQL:
+    CREATE TRIGGER fku_tags  BEFORE UPDATE OF name ON tags  FOR EACH ROW BEGIN      SELECT RAISE(ABORT, 'Tag cannot be blank')      WHERE TRIM(NEW.name)='';  END
+
+• TYPE: trigger
+  NAME: insert_creators
+  TABLE: creators
+  SQL:
+    CREATE TRIGGER insert_creators BEFORE INSERT ON creators  FOR EACH ROW WHEN NEW.firstName='' AND NEW.lastName=''  BEGIN    SELECT RAISE (ABORT, 'Creator names cannot be empty');  END
+
+• TYPE: trigger
+  NAME: update_creators
+  TABLE: creators
+  SQL:
+    CREATE TRIGGER update_creators BEFORE UPDATE ON creators  FOR EACH ROW WHEN NEW.firstName='' AND NEW.lastName=''  BEGIN    SELECT RAISE (ABORT, 'Creator names cannot be empty');  END
+
+#
+# Table: baseFieldMappings
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemTypeID | INT | 0 | NULL | 1
+   1  | baseFieldID | INT | 0 | NULL | 2
+   2  | fieldID | INT | 0 | NULL | 3
+
+## First 5 Data Rows:
+itemTypeID  | baseFieldID  | fieldID
+--------------------------------------
+2  | 4  | 3
+4  | 4  | 17
+4  | 23  | 22
+5  | 27  | 26
+5  | 19  | 29
+
+#
+# Table: baseFieldMappingsCombined
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemTypeID | INT | 0 | NULL | 1
+   1  | baseFieldID | INT | 0 | NULL | 2
+   2  | fieldID | INT | 0 | NULL | 3
+
+## First 5 Data Rows:
+itemTypeID  | baseFieldID  | fieldID
+--------------------------------------
+2  | 4  | 3
+4  | 4  | 17
+4  | 23  | 22
+5  | 19  | 29
+5  | 27  | 26
+
+#
+# Table: charsets
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | charsetID | INTEGER | 0 | NULL | 1
+   1  | charset | TEXT | 0 | NULL | 0
+
+## First 5 Data Rows:
+charsetID  | charset
+----------------------
+1  | 'utf-8'
+2  | 'big5'
+3  | 'euc-jp'
+4  | 'euc-kr'
+5  | 'gb18030'
+
+#
+# Table: collectionItems
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | collectionID | INT | 1 | NULL | 1
+   1  | itemID | INT | 1 | NULL | 2
+   2  | orderIndex | INT | 1 | 0 | 0
+
+## First 5 Data Rows:
+collectionID  | itemID  | orderIndex
+--------------------------------------
+2  | 1  | 0
+3  | 8  | 0
+3  | 10  | 1
+2  | 14  | 1
+2  | 16  | 2
+
+#
+# Table: collectionRelations
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | collectionID | INT | 1 | NULL | 1
+   1  | predicateID | INT | 1 | NULL | 2
+   2  | object | TEXT | 1 | NULL | 3
+
+## First 5 Data Rows:
+collectionID  | predicateID  | object
+---------------------------------------
+  <no rows>
+
+#
+# Table: collections
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | collectionID | INTEGER | 0 | NULL | 1
+   1  | collectionName | TEXT | 1 | NULL | 0
+   2  | parentCollectionID | INT | 0 | NULL | 0
+   3  | clientDateModified | TIMESTAMP | 1 | CURRENT_TIMESTAMP | 0
+   4  | libraryID | INT | 1 | NULL | 0
+   5  | key | TEXT | 1 | NULL | 0
+   6  | version | INT | 1 | 0 | 0
+   7  | synced | INT | 1 | 0 | 0
+
+## First 5 Data Rows:
+collectionID  | collectionName  | parentCollectionID  | clientDateModified  | libraryID  | key  | version  | synced
+---------------------------------------------------------------------------------------------------------------------
+1  | 'Temporal Reasoning'  | None  | '2025-06-03 06:23:24'  | 1  | 'PZJN8WQL'  | 3  | 1
+2  | 'Dataset Papers'  | 1  | '2025-06-03 06:23:32'  | 1  | 'KF7YLQDM'  | 3  | 1
+3  | 'BenchMarking Papers'  | 1  | '2025-06-03 06:23:46'  | 1  | 'EFKNA8ES'  | 4  | 1
+4  | 'DP2'  | None  | '2025-06-03 16:48:10'  | 1  | 'FYRQWB9M'  | 298  | 1
+  <only 4 rows available>
+
+#
+# Table: creatorTypes
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | creatorTypeID | INTEGER | 0 | NULL | 1
+   1  | creatorType | TEXT | 0 | NULL | 0
+
+## First 5 Data Rows:
+creatorTypeID  | creatorType
+------------------------------
+1  | 'artist'
+2  | 'contributor'
+3  | 'performer'
+4  | 'composer'
+5  | 'wordsBy'
+
+#
+# Table: creators
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | creatorID | INTEGER | 0 | NULL | 1
+   1  | firstName | TEXT | 0 | NULL | 0
+   2  | lastName | TEXT | 0 | NULL | 0
+   3  | fieldMode | INT | 0 | NULL | 0
+
+## First 5 Data Rows:
+creatorID  | firstName  | lastName  | fieldMode
+-------------------------------------------------
+1  | 'Ben'  | 'Zhou'  | 0
+2  | 'Daniel'  | 'Khashabi'  | 0
+3  | 'Qiang'  | 'Ning'  | 0
+4  | 'Dan'  | 'Roth'  | 0
+5  | 'Zheng'  | 'Chu'  | 0
+
+#
+# Table: customBaseFieldMappings
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | customItemTypeID | INT | 0 | NULL | 1
+   1  | baseFieldID | INT | 0 | NULL | 2
+   2  | customFieldID | INT | 0 | NULL | 3
+
+## First 5 Data Rows:
+customItemTypeID  | baseFieldID  | customFieldID
+--------------------------------------------------
+  <no rows>
+
+#
+# Table: customFields
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | customFieldID | INTEGER | 0 | NULL | 1
+   1  | fieldName | TEXT | 0 | NULL | 0
+   2  | label | TEXT | 0 | NULL | 0
+
+## First 5 Data Rows:
+customFieldID  | fieldName  | label
+-------------------------------------
+  <no rows>
+
+#
+# Table: customItemTypeFields
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | customItemTypeID | INT | 1 | NULL | 1
+   1  | fieldID | INT | 0 | NULL | 0
+   2  | customFieldID | INT | 0 | NULL | 0
+   3  | hide | INT | 1 | NULL | 0
+   4  | orderIndex | INT | 1 | NULL | 2
+
+## First 5 Data Rows:
+customItemTypeID  | fieldID  | customFieldID  | hide  | orderIndex
+--------------------------------------------------------------------
+  <no rows>
+
+#
+# Table: customItemTypes
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | customItemTypeID | INTEGER | 0 | NULL | 1
+   1  | typeName | TEXT | 0 | NULL | 0
+   2  | label | TEXT | 0 | NULL | 0
+   3  | display | INT | 0 | 1 | 0
+   4  | icon | TEXT | 0 | NULL | 0
+
+## First 5 Data Rows:
+customItemTypeID  | typeName  | label  | display  | icon
+----------------------------------------------------------
+  <no rows>
+
+#
+# Table: dbDebug1
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | a | INTEGER | 0 | NULL | 1
+
+## First 5 Data Rows:
+a
+---
+  <no rows>
+
+#
+# Table: deletedCollections
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | collectionID | INTEGER | 0 | NULL | 1
+   1  | dateDeleted |  | 1 | CURRENT_TIMESTAMP | 0
+
+## First 5 Data Rows:
+collectionID  | dateDeleted
+-----------------------------
+  <no rows>
+
+#
+# Table: deletedItems
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemID | INTEGER | 0 | NULL | 1
+   1  | dateDeleted |  | 1 | CURRENT_TIMESTAMP | 0
+
+## First 5 Data Rows:
+itemID  | dateDeleted
+-----------------------
+13  | '2025-06-03 06:50:02'
+21  | '2025-06-03 07:00:38'
+23  | '2025-06-03 07:00:47'
+31  | '2025-06-05 11:18:53'
+61  | '2025-06-03 12:05:45'
+
+#
+# Table: deletedSearches
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | savedSearchID | INTEGER | 0 | NULL | 1
+   1  | dateDeleted |  | 1 | CURRENT_TIMESTAMP | 0
+
+## First 5 Data Rows:
+savedSearchID  | dateDeleted
+------------------------------
+  <no rows>
+
+#
+# Table: feedItems
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemID | INTEGER | 0 | NULL | 1
+   1  | guid | TEXT | 1 | NULL | 0
+   2  | readTime | TIMESTAMP | 0 | NULL | 0
+   3  | translatedTime | TIMESTAMP | 0 | NULL | 0
+
+## First 5 Data Rows:
+itemID  | guid  | readTime  | translatedTime
+----------------------------------------------
+  <no rows>
+
+#
+# Table: feeds
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | libraryID | INTEGER | 0 | NULL | 1
+   1  | name | TEXT | 1 | NULL | 0
+   2  | url | TEXT | 1 | NULL | 0
+   3  | lastUpdate | TIMESTAMP | 0 | NULL | 0
+   4  | lastCheck | TIMESTAMP | 0 | NULL | 0
+   5  | lastCheckError | TEXT | 0 | NULL | 0
+   6  | cleanupReadAfter | INT | 0 | NULL | 0
+   7  | cleanupUnreadAfter | INT | 0 | NULL | 0
+   8  | refreshInterval | INT | 0 | NULL | 0
+
+## First 5 Data Rows:
+libraryID  | name  | url  | lastUpdate  | lastCheck  | lastCheckError  | cleanupReadAfter  | cleanupUnreadAfter  | refreshInterval
+------------------------------------------------------------------------------------------------------------------------------------
+  <no rows>
+
+#
+# Table: fieldFormats
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | fieldFormatID | INTEGER | 0 | NULL | 1
+   1  | regex | TEXT | 0 | NULL | 0
+   2  | isInteger | INT | 0 | NULL | 0
+
+## First 5 Data Rows:
+fieldFormatID  | regex  | isInteger
+-------------------------------------
+1  | '.*'  | 0
+2  | '[0-9]*'  | 1
+3  | '[0-9]{4}'  | 1
+  <only 3 rows available>
+
+#
+# Table: fields
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | fieldID | INTEGER | 0 | NULL | 1
+   1  | fieldName | TEXT | 0 | NULL | 0
+   2  | fieldFormatID | INT | 0 | NULL | 0
+
+## First 5 Data Rows:
+fieldID  | fieldName  | fieldFormatID
+---------------------------------------
+1  | 'title'  | None
+2  | 'abstractNote'  | None
+3  | 'artworkMedium'  | None
+4  | 'medium'  | None
+5  | 'artworkSize'  | None
+
+#
+# Table: fieldsCombined
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | fieldID | INT | 1 | NULL | 1
+   1  | fieldName | TEXT | 1 | NULL | 0
+   2  | label | TEXT | 0 | NULL | 0
+   3  | fieldFormatID | INT | 0 | NULL | 0
+   4  | custom | INT | 1 | NULL | 0
+
+## First 5 Data Rows:
+fieldID  | fieldName  | label  | fieldFormatID  | custom
+----------------------------------------------------------
+1  | 'title'  | None  | None  | 0
+2  | 'abstractNote'  | None  | None  | 0
+3  | 'artworkMedium'  | None  | None  | 0
+4  | 'medium'  | None  | None  | 0
+5  | 'artworkSize'  | None  | None  | 0
+
+#
+# Table: fileTypeMimeTypes
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | fileTypeID | INT | 0 | NULL | 1
+   1  | mimeType | TEXT | 0 | NULL | 2
+
+## First 5 Data Rows:
+fileTypeID  | mimeType
+------------------------
+1  | 'text/html'
+2  | 'image/'
+2  | 'application/vnd.oasis.opendocument.graphics'
+2  | 'application/vnd.oasis.opendocument.image'
+3  | 'application/pdf'
+
+#
+# Table: fileTypes
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | fileTypeID | INTEGER | 0 | NULL | 1
+   1  | fileType | TEXT | 0 | NULL | 0
+
+## First 5 Data Rows:
+fileTypeID  | fileType
+------------------------
+1  | 'webpage'
+2  | 'image'
+3  | 'pdf'
+4  | 'audio'
+5  | 'video'
+
+#
+# Table: fulltextItemWords
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | wordID | INT | 0 | NULL | 1
+   1  | itemID | INT | 0 | NULL | 2
+
+## First 5 Data Rows:
+wordID  | itemID
+------------------
+1  | 9
+2  | 9
+3  | 9
+8  | 9
+9  | 9
+
+#
+# Table: fulltextItems
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemID | INTEGER | 0 | NULL | 1
+   1  | indexedPages | INT | 0 | NULL | 0
+   2  | totalPages | INT | 0 | NULL | 0
+   3  | indexedChars | INT | 0 | NULL | 0
+   4  | totalChars | INT | 0 | NULL | 0
+   5  | version | INT | 1 | 0 | 0
+   6  | synced | INT | 1 | 0 | 0
+
+## First 5 Data Rows:
+itemID  | indexedPages  | totalPages  | indexedChars  | totalChars  | version  | synced
+-----------------------------------------------------------------------------------------
+4  | 7  | 7  | None  | None  | 337  | 1
+9  | 25  | 25  | None  | None  | 22  | 1
+12  | 25  | 25  | None  | None  | 28  | 1
+15  | 11  | 11  | None  | None  | 38  | 1
+17  | 9  | 9  | None  | None  | 44  | 1
+
+#
+# Table: fulltextWords
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | wordID | INTEGER | 0 | NULL | 1
+   1  | word | TEXT | 0 | NULL | 0
+
+## First 5 Data Rows:
+wordID  | word
+----------------
+1  | '0'
+2  | '1'
+3  | '10'
+4  | '100'
+5  | '104'
+
+#
+# Table: groupItems
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemID | INTEGER | 0 | NULL | 1
+   1  | createdByUserID | INT | 0 | NULL | 0
+   2  | lastModifiedByUserID | INT | 0 | NULL | 0
+
+## First 5 Data Rows:
+itemID  | createdByUserID  | lastModifiedByUserID
+---------------------------------------------------
+  <no rows>
+
+#
+# Table: groups
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | groupID | INTEGER | 0 | NULL | 1
+   1  | libraryID | INT | 1 | NULL | 0
+   2  | name | TEXT | 1 | NULL | 0
+   3  | description | TEXT | 1 | NULL | 0
+   4  | version | INT | 1 | NULL | 0
+
+## First 5 Data Rows:
+groupID  | libraryID  | name  | description  | version
+--------------------------------------------------------
+  <no rows>
+
+#
+# Table: itemAnnotations
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemID | INTEGER | 0 | NULL | 1
+   1  | parentItemID | INT | 1 | NULL | 0
+   2  | type | INTEGER | 1 | NULL | 0
+   3  | authorName | TEXT | 0 | NULL | 0
+   4  | text | TEXT | 0 | NULL | 0
+   5  | comment | TEXT | 0 | NULL | 0
+   6  | color | TEXT | 0 | NULL | 0
+   7  | pageLabel | TEXT | 0 | NULL | 0
+   8  | sortIndex | TEXT | 1 | NULL | 0
+   9  | position | TEXT | 1 | NULL | 0
+   10  | isExternal | INT | 1 | NULL | 0
+
+## First 5 Data Rows:
+itemID  | parentItemID  | type  | authorName  | text  | comment  | color  | pageLabel  | sortIndex  | position  | isExternal
+------------------------------------------------------------------------------------------------------------------------------
+5  | 4  | 1  | None  | 'We find that the best current methods used on MCTACO are still far behind human performance, by about 20%'  | None  | '#a28ae5'  | '3363'  | '00000|001049|00421'  | '{"pageIndex":0,"rects":[[115.299,423.684,273.256,432.322],[89.008,411.729,273.259,420.367],[89.008,399.773,201.725,408.411]]}'  | 0
+6  | 4  | 1  | None  | 'we are the firstto systematically study and quantify performanceon a range of temporal commonsense phenom-ena.'  | None  | '#5fb236'  | '1'  | '00000|002178|00572'  | '{"pageIndex":0,"rects":[[453.447,260.111,525.556,269.864],[307.418,246.562,525.327,256.315],[307.592,233.013,525.021,242.766],[307.549,219.464,324.393,229.217]]}'  | 0
+7  | 4  | 1  | None  | 'we consider five temporal prop-erties: duration (how long an event takes), tem-poral ordering (typical order of events), typicaltime (when an event happens), frequency (how of-ten an event occurs), and stationarity (whether astate holds for a very long time or indefinitely).'  | None  | '#5fb236'  | '1'  | '00000|002287|00613'  | '{"pageIndex":0,"rects":[[385.952,219.464,525.021,229.217],[307.549,205.915,524.987,215.668],[306.469,192.365,525.555,202.118],[307.68,178.816,525.023,188.569],[307.418,165.267,525.52,175.02],[307.832,151.718,524.792,161.471]]}'  | 0
+33  | 4  | 1  | None  | 'development of a new dataset dedicated for it, MCTACO (short for multiple-choice temporal common-sense).'  | None  | '#5fb236'  | '2'  | '00001|000260|00149'  | '{"rects":[[160.149,683.501,290.284,693.385],[72.295,669.952,290.051,679.836],[72.273,656.403,222.491,666.287]],"pageIndex":1}'  | 0
+34  | 4  | 1  | None  | 'MCTACO is constructed via crowdsourcing with guidelines designed meticulously to guarantee its quality.'  | None  | '#a28ae5'  | '2'  | '00001|000350|00176'  | '{"pageIndex":1,"rects":[[235.309,656.403,289.821,666.156],[72.273,642.853,289.822,652.606],[72.295,629.304,289.517,639.057]]}'  | 0
+
+#
+# Table: itemAttachments
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemID | INTEGER | 0 | NULL | 1
+   1  | parentItemID | INT | 0 | NULL | 0
+   2  | linkMode | INT | 0 | NULL | 0
+   3  | contentType | TEXT | 0 | NULL | 0
+   4  | charsetID | INT | 0 | NULL | 0
+   5  | path | TEXT | 0 | NULL | 0
+   6  | syncState | INT | 0 | 0 | 0
+   7  | storageModTime | INT | 0 | NULL | 0
+   8  | storageHash | TEXT | 0 | NULL | 0
+   9  | lastProcessedModificationTime | INT | 0 | NULL | 0
+
+## First 5 Data Rows:
+itemID  | parentItemID  | linkMode  | contentType  | charsetID  | path  | syncState  | storageModTime  | storageHash  | lastProcessedModificationTime
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+4  | 1  | 1  | 'application/pdf'  | None  | 'storage:Zhou et al. - 2019 - “Going on a vacation” takes longer than “Going for a walk” A Study of Temporal Commonsense Understa.pdf'  | 2  | 1748932013580  | '2208c89be43e037047a5f864b79f5d50'  | 1748932013
+9  | 8  | 1  | 'application/pdf'  | None  | 'storage:Chu et al. - 2024 - TimeBench A Comprehensive Evaluation of Temporal Reasoning Abilities in Large Language Models.pdf'  | 2  | 1748933031845  | '3248e83d769fc3301a14fdf7a9b041a8'  | 1748933031
+12  | 10  | 1  | 'application/pdf'  | None  | 'storage:Jain et al. - 2023 - Do Language Models Have a Common Sense regarding Time Revisiting Temporal Commonsense Reasoning in.pdf'  | 2  | 1748933223661  | '87f688004b700a100b95a73e69615b68'  | 1748933223
+15  | 14  | 1  | 'application/pdf'  | None  | 'storage:Qin et al. - 2021 - TIMEDIAL Temporal Commonsense Reasoning in Dialog.pdf'  | 2  | 1748933487571  | '7670ad525690d795bd1ee279dfc6ab25'  | None
+17  | 16  | 1  | 'application/pdf'  | None  | 'storage:Vashishtha et al. - 2020 - Temporal Reasoning in Natural Language Inference.pdf'  | 2  | 1748933639431  | 'a7f84099d0947134c554cea7ab46efcb'  | None
+
+#
+# Table: itemCreators
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemID | INT | 1 | NULL | 1
+   1  | creatorID | INT | 1 | NULL | 2
+   2  | creatorTypeID | INT | 1 | 1 | 3
+   3  | orderIndex | INT | 1 | 0 | 4
+
+## First 5 Data Rows:
+itemID  | creatorID  | creatorTypeID  | orderIndex
+----------------------------------------------------
+1  | 1  | 8  | 0
+1  | 2  | 8  | 1
+1  | 3  | 8  | 2
+1  | 4  | 8  | 3
+8  | 5  | 8  | 0
+
+#
+# Table: itemData
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemID | INT | 0 | NULL | 1
+   1  | fieldID | INT | 0 | NULL | 2
+   2  | valueID |  | 0 | NULL | 0
+
+## First 5 Data Rows:
+itemID  | fieldID  | valueID
+------------------------------
+1  | 1  | 1
+1  | 6  | 2
+1  | 7  | 3
+1  | 8  | 4
+1  | 11  | 5
+
+#
+# Table: itemDataValues
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | valueID | INTEGER | 0 | NULL | 1
+   1  | value |  | 0 | NULL | 0
+
+## First 5 Data Rows:
+valueID  | value
+------------------
+1  | '“Going on a vacation” takes longer than “Going for a walk”: A Study of Temporal Commonsense Understanding'
+2  | '2019-00-00 2019'
+3  | 'en'
+4  | '“Going on a vacation” takes longer than “Going for a walk”'
+5  | 'DOI.org (Crossref)'
+
+#
+# Table: itemNotes
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemID | INTEGER | 0 | NULL | 1
+   1  | parentItemID | INT | 0 | NULL | 0
+   2  | note | TEXT | 0 | NULL | 0
+   3  | title | TEXT | 0 | NULL | 0
+  
+  
+  //ommited
+
+#
+# Table: itemRelations
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemID | INT | 1 | NULL | 1
+   1  | predicateID | INT | 1 | NULL | 2
+   2  | object | TEXT | 1 | NULL | 3
+
+## First 5 Data Rows:
+itemID  | predicateID  | object
+---------------------------------
+  <no rows>
+
+#
+# Table: itemTags
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemID | INT | 1 | NULL | 1
+   1  | tagID | INT | 1 | NULL | 2
+   2  | type | INT | 1 | NULL | 0
+
+## First 5 Data Rows:
+itemID  | tagID  | type
+-------------------------
+48  | 9  | 0
+50  | 9  | 0
+46  | 9  | 0
+42  | 9  | 0
+43  | 9  | 0
+
+#
+# Table: itemTypeCreatorTypes
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemTypeID | INT | 0 | NULL | 1
+   1  | creatorTypeID | INT | 0 | NULL | 2
+   2  | primaryField | INT | 0 | NULL | 0
+
+## First 5 Data Rows:
+itemTypeID  | creatorTypeID  | primaryField
+---------------------------------------------
+2  | 1  | 1
+2  | 2  | 0
+4  | 3  | 1
+4  | 2  | 0
+4  | 4  | 0
+
+#
+# Table: itemTypeFields
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemTypeID | INT | 0 | NULL | 1
+   1  | fieldID | INT | 0 | NULL | 0
+   2  | hide | INT | 0 | NULL | 0
+   3  | orderIndex | INT | 0 | NULL | 2
+
+## First 5 Data Rows:
+itemTypeID  | fieldID  | hide  | orderIndex
+---------------------------------------------
+2  | 1  | 0  | 0
+2  | 2  | 0  | 1
+2  | 3  | 0  | 2
+2  | 5  | 0  | 3
+2  | 6  | 0  | 4
+
+#
+# Table: itemTypeFieldsCombined
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemTypeID | INT | 1 | NULL | 1
+   1  | fieldID | INT | 1 | NULL | 0
+   2  | hide | INT | 0 | NULL | 0
+   3  | orderIndex | INT | 1 | NULL | 2
+
+## First 5 Data Rows:
+itemTypeID  | fieldID  | hide  | orderIndex
+---------------------------------------------
+2  | 1  | 0  | 0
+2  | 2  | 0  | 1
+2  | 3  | 0  | 2
+2  | 5  | 0  | 3
+2  | 6  | 0  | 4
+
+#
+# Table: itemTypes
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemTypeID | INTEGER | 0 | NULL | 1
+   1  | typeName | TEXT | 0 | NULL | 0
+   2  | templateItemTypeID | INT | 0 | NULL | 0
+   3  | display | INT | 0 | 1 | 0
+
+## First 5 Data Rows:
+itemTypeID  | typeName  | templateItemTypeID  | display
+---------------------------------------------------------
+1  | 'annotation'  | None  | 1
+2  | 'artwork'  | None  | 1
+3  | 'attachment'  | None  | 1
+4  | 'audioRecording'  | None  | 1
+5  | 'bill'  | None  | 1
+
+#
+# Table: itemTypesCombined
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemTypeID | INT | 1 | NULL | 1
+   1  | typeName | TEXT | 1 | NULL | 0
+   2  | display | INT | 1 | 1 | 0
+   3  | custom | INT | 1 | NULL | 0
+
+## First 5 Data Rows:
+itemTypeID  | typeName  | display  | custom
+---------------------------------------------
+1  | 'annotation'  | 1  | 0
+2  | 'artwork'  | 1  | 0
+3  | 'attachment'  | 1  | 0
+4  | 'audioRecording'  | 1  | 0
+5  | 'bill'  | 1  | 0
+
+#
+# Table: items
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemID | INTEGER | 0 | NULL | 1
+   1  | itemTypeID | INT | 1 | NULL | 0
+   2  | dateAdded | TIMESTAMP | 1 | CURRENT_TIMESTAMP | 0
+   3  | dateModified | TIMESTAMP | 1 | CURRENT_TIMESTAMP | 0
+   4  | clientDateModified | TIMESTAMP | 1 | CURRENT_TIMESTAMP | 0
+   5  | libraryID | INT | 1 | NULL | 0
+   6  | key | TEXT | 1 | NULL | 0
+   7  | version | INT | 1 | 0 | 0
+   8  | synced | INT | 1 | 0 | 0
+
+## First 5 Data Rows:
+itemID  | itemTypeID  | dateAdded  | dateModified  | clientDateModified  | libraryID  | key  | version  | synced
+------------------------------------------------------------------------------------------------------------------
+1  | 11  | '2025-06-03 06:19:07'  | '2025-06-03 06:19:07'  | '2025-06-03 06:24:44'  | 1  | '67F9BLI5'  | 5  | 1
+4  | 3  | '2025-06-03 06:26:53'  | '2025-06-03 06:26:53'  | '2025-06-03 06:26:53'  | 1  | 'RFCM2DHI'  | 9  | 1
+5  | 1  | '2025-06-03 06:28:02'  | '2025-06-03 10:58:02'  | '2025-06-03 10:58:02'  | 1  | 'K28CLGIZ'  | 189  | 1
+6  | 1  | '2025-06-03 06:33:46'  | '2025-06-03 09:14:41'  | '2025-06-03 09:14:52'  | 1  | 'V64S39SF'  | 151  | 1
+7  | 1  | '2025-06-03 06:34:40'  | '2025-06-03 09:14:35'  | '2025-06-03 09:14:52'  | 1  | 'VYXLB8S5'  | 149  | 1
+
+#
+# Table: libraries
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | libraryID | INTEGER | 0 | NULL | 1
+   1  | type | TEXT | 1 | NULL | 0
+   2  | editable | INT | 1 | NULL | 0
+   3  | filesEditable | INT | 1 | NULL | 0
+   4  | version | INT | 1 | 0 | 0
+   5  | storageVersion | INT | 1 | 0 | 0
+   6  | lastSync | INT | 1 | 0 | 0
+   7  | archived | INT | 1 | 0 | 0
+
+## First 5 Data Rows:
+libraryID  | type  | editable  | filesEditable  | version  | storageVersion  | lastSync  | archived
+-----------------------------------------------------------------------------------------------------
+1  | 'user'  | 1  | 1  | 338  | 338  | 1749123635  | 0
+  <only 1 rows available>
+
+#
+# Table: proxies
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | proxyID | INTEGER | 0 | NULL | 1
+   1  | multiHost | INT | 0 | NULL | 0
+   2  | autoAssociate | INT | 0 | NULL | 0
+   3  | scheme | TEXT | 0 | NULL | 0
+
+## First 5 Data Rows:
+proxyID  | multiHost  | autoAssociate  | scheme
+-------------------------------------------------
+  <no rows>
+
+#
+# Table: proxyHosts
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | hostID | INTEGER | 0 | NULL | 1
+   1  | proxyID | INTEGER | 0 | NULL | 0
+   2  | hostname | TEXT | 0 | NULL | 0
+
+## First 5 Data Rows:
+hostID  | proxyID  | hostname
+-------------------------------
+  <no rows>
+
+#
+# Table: publicationsItems
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemID | INTEGER | 0 | NULL | 1
+
+## First 5 Data Rows:
+itemID
+--------
+  <no rows>
+
+#
+# Table: relationPredicates
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | predicateID | INTEGER | 0 | NULL | 1
+   1  | predicate | TEXT | 0 | NULL | 0
+
+## First 5 Data Rows:
+predicateID  | predicate
+--------------------------
+  <no rows>
+
+#
+# Table: retractedItems
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | itemID | INTEGER | 0 | NULL | 1
+   1  | data | TEXT | 0 | NULL | 0
+   2  | flag | INT | 0 | 0 | 0
+
+## First 5 Data Rows:
+itemID  | data  | flag
+------------------------
+  <no rows>
+
+#
+# Table: savedSearchConditions
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | savedSearchID | INT | 1 | NULL | 1
+   1  | searchConditionID | INT | 1 | NULL | 2
+   2  | condition | TEXT | 1 | NULL | 0
+   3  | operator | TEXT | 0 | NULL | 0
+   4  | value | TEXT | 0 | NULL | 0
+   5  | required | NONE | 0 | NULL | 0
+
+## First 5 Data Rows:
+savedSearchID  | searchConditionID  | condition  | operator  | value  | required
+----------------------------------------------------------------------------------
+  <no rows>
+
+#
+# Table: savedSearches
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | savedSearchID | INTEGER | 0 | NULL | 1
+   1  | savedSearchName | TEXT | 1 | NULL | 0
+   2  | clientDateModified | TIMESTAMP | 1 | CURRENT_TIMESTAMP | 0
+   3  | libraryID | INT | 1 | NULL | 0
+   4  | key | TEXT | 1 | NULL | 0
+   5  | version | INT | 1 | 0 | 0
+   6  | synced | INT | 1 | 0 | 0
+
+## First 5 Data Rows:
+savedSearchID  | savedSearchName  | clientDateModified  | libraryID  | key  | version  | synced
+-------------------------------------------------------------------------------------------------
+  <no rows>
+
+#
+# Table: settings
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | setting | TEXT | 0 | NULL | 1
+   1  | key | TEXT | 0 | NULL | 2
+   2  | value |  | 0 | NULL | 0
+
+//ommited
+
+#
+# Table: storageDeleteLog
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | libraryID | INT | 1 | NULL | 1
+   1  | key | TEXT | 1 | NULL | 2
+   2  | dateDeleted | TEXT | 1 | CURRENT_TIMESTAMP | 0
+
+## First 5 Data Rows:
+libraryID  | key  | dateDeleted
+---------------------------------
+  <no rows>
+
+#
+# Table: syncCache
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | libraryID | INT | 1 | NULL | 1
+   1  | key | TEXT | 1 | NULL | 2
+   2  | syncObjectTypeID | INT | 1 | NULL | 3
+   3  | version | INT | 1 | NULL | 4
+   4  | data | TEXT | 0 | NULL | 0
+
+## First 5 Data Rows:
+libraryID  | key  | syncObjectTypeID  | version  | data
+---------------------------------------------------------
+1  | 'PZJN8WQL'  | 1  | 3  | '{"key":"PZJN8WQL","version":3,"library":{"type":"user","id":17301851,"name":"sakhadib","links":{"alternate":{"href":"https://www.zotero.org/sakhadib","type":"text/html"}}},"links":{"self":{"href":"https://api.zotero.org/users/17301851/collections/PZJN8WQL","type":"application/json"},"alternate":{"href":"https://www.zotero.org/sakhadib/collections/PZJN8WQL","type":"text/html"}},"meta":{"numCollections":0,"numItems":0},"data":{"key":"PZJN8WQL","version":3,"name":"Temporal Reasoning","parentCollection":false,"relations":{}}}'
+1  | 'KF7YLQDM'  | 1  | 3  | '{"key":"KF7YLQDM","version":3,"library":{"type":"user","id":17301851,"name":"sakhadib","links":{"alternate":{"href":"https://www.zotero.org/sakhadib","type":"text/html"}}},"links":{"self":{"href":"https://api.zotero.org/users/17301851/collections/KF7YLQDM","type":"application/json"},"alternate":{"href":"https://www.zotero.org/sakhadib/collections/KF7YLQDM","type":"text/html"},"up":{"href":"https://api.zotero.org/users/17301851/collections/PZJN8WQL","type":"application/json"}},"meta":{"numCollections":0,"numItems":0},"data":{"key":"KF7YLQDM","version":3,"name":"Dataset Papers","parentCollection":"PZJN8WQL","relations":{}}}'
+1  | 'EFKNA8ES'  | 1  | 4  | '{"key":"EFKNA8ES","version":4,"library":{"type":"user","id":17301851,"name":"sakhadib","links":{"alternate":{"href":"https://www.zotero.org/sakhadib","type":"text/html"}}},"links":{"self":{"href":"https://api.zotero.org/users/17301851/collections/EFKNA8ES","type":"application/json"},"alternate":{"href":"https://www.zotero.org/sakhadib/collections/EFKNA8ES","type":"text/html"},"up":{"href":"https://api.zotero.org/users/17301851/collections/PZJN8WQL","type":"application/json"}},"meta":{"numCollections":0,"numItems":0},"data":{"key":"EFKNA8ES","version":4,"name":"BenchMarking Papers","parentCollection":"PZJN8WQL","relations":{}}}'
+1  | '67F9BLI5'  | 3  | 5  | '{"key":"67F9BLI5","version":5,"library":{"type":"user","id":17301851,"name":"sakhadib","links":{"alternate":{"href":"https://www.zotero.org/sakhadib","type":"text/html"}}},"links":{"self":{"href":"https://api.zotero.org/users/17301851/items/67F9BLI5","type":"application/json"},"alternate":{"href":"https://www.zotero.org/sakhadib/items/67F9BLI5","type":"text/html"}},"meta":{"creatorSummary":"Zhou et al.","parsedDate":"2019","numChildren":0},"data":{"key":"67F9BLI5","version":5,"itemType":"conferencePaper","title":"“Going on a vacation” takes longer than “Going for a walk”: A Study of Temporal Commonsense Understanding","creators":[{"creatorType":"author","firstName":"Ben","lastName":"Zhou"},{"creatorType":"author","firstName":"Daniel","lastName":"Khashabi"},{"creatorType":"author","firstName":"Qiang","lastName":"Ning"},{"creatorType":"author","firstName":"Dan","lastName":"Roth"}],"abstractNote":"","date":"2019","proceedingsTitle":"","conferenceName":"Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)","place":"Hong Kong, China","publisher":"Association for Computational Linguistics","volume":"","pages":"3361-3367","series":"","language":"en","DOI":"10.18653/v1/D19-1332","ISBN":"","shortTitle":"“Going on a vacation” takes longer than “Going for a walk”","url":"https://www.aclweb.org/anthology/D19-1332","accessDate":"2025-06-03T06:19:07Z","archive":"","archiveLocation":"","libraryCatalog":"DOI.org (Crossref)","callNumber":"","rights":"","extra":"","tags":[],"collections":["KF7YLQDM"],"relations":{},"dateAdded":"2025-06-03T06:19:07Z","dateModified":"2025-06-03T06:19:07Z"}}'
+1  | 'RFCM2DHI'  | 3  | 9  | '{"key":"RFCM2DHI","version":"9","library":{"type":"user","id":17301851,"name":"sakhadib","links":{"alternate":{"href":"https://www.zotero.org/sakhadib","type":"text/html"}}},"links":{"self":{"href":"https://api.zotero.org/users/17301851/items/RFCM2DHI","type":"application/json"},"alternate":{"href":"https://www.zotero.org/sakhadib/items/RFCM2DHI","type":"text/html"},"up":{"href":"https://api.zotero.org/users/17301851/items/67F9BLI5","type":"application/json"}},"meta":{"numChildren":0},"data":{"key":"RFCM2DHI","version":"9","parentItem":"67F9BLI5","itemType":"attachment","linkMode":"imported_url","title":"Full Text PDF","accessDate":"2025-06-03T06:26:53Z","url":"https://aclanthology.org/D19-1332.pdf","note":"","contentType":"application/pdf","charset":"","filename":"Zhou et al. - 2019 - “Going on a vacation” takes longer than “Going for a walk” A Study of Temporal Commonsense Understa.pdf","md5":"2208c89be43e037047a5f864b79f5d50","mtime":1748932013580,"tags":[],"relations":{},"dateAdded":"2025-06-03T06:26:53Z","dateModified":"2025-06-03T06:26:53Z"}}'
+
+#
+# Table: syncDeleteLog
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | syncObjectTypeID | INT | 1 | NULL | 0
+   1  | libraryID | INT | 1 | NULL | 0
+   2  | key | TEXT | 1 | NULL | 0
+   3  | dateDeleted | TEXT | 1 | CURRENT_TIMESTAMP | 0
+
+## First 5 Data Rows:
+syncObjectTypeID  | libraryID  | key  | dateDeleted
+-----------------------------------------------------
+7  | 1  | 'lastPageIndex_u_UJS249K6'  | '2025-06-03 06:48:26'
+  <only 1 rows available>
+
+#
+# Table: syncObjectTypes
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | syncObjectTypeID | INTEGER | 0 | NULL | 1
+   1  | name | TEXT | 0 | NULL | 0
+
+## First 5 Data Rows:
+syncObjectTypeID  | name
+--------------------------
+1  | 'collection'
+2  | 'creator'
+3  | 'item'
+4  | 'search'
+5  | 'tag'
+
+#
+# Table: syncQueue
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | libraryID | INT | 1 | NULL | 1
+   1  | key | TEXT | 1 | NULL | 2
+   2  | syncObjectTypeID | INT | 1 | NULL | 3
+   3  | lastCheck | TIMESTAMP | 0 | NULL | 0
+   4  | tries | INT | 0 | NULL | 0
+
+## First 5 Data Rows:
+libraryID  | key  | syncObjectTypeID  | lastCheck  | tries
+------------------------------------------------------------
+  <no rows>
+
+#
+# Table: syncedSettings
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | setting | TEXT | 1 | NULL | 1
+   1  | libraryID | INT | 1 | NULL | 2
+   2  | value |  | 1 | NULL | 0
+   3  | version | INT | 1 | 0 | 0
+   4  | synced | INT | 1 | 0 | 0
+
+## First 5 Data Rows:
+setting  | libraryID  | value  | version  | synced
+----------------------------------------------------
+'lastPageIndex_u_RFCM2DHI'  | 1  | '1'  | 331  | 1
+'lastPageIndex_u_3FLS9SJV'  | 1  | '2'  | 91  | 1
+'lastPageIndex_u_BIX6SXTZ'  | 1  | '2'  | 74  | 1
+'tagColors'  | 1  | '[{"name":"Claim","color":"#A28AE5"},{"name":"contribution","color":"#5FB236"},{"name":"methodology","color":"#FF8C19"},{"name":"limitations","color":"#FF6666"},{"name":"Results","color":"#2EA8E5"}]'  | 207  | 1
+'lastPageIndex_u_X6BJXIJC'  | 1  | '3'  | 328  | 1
+
+#
+# Table: tags
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | tagID | INTEGER | 0 | NULL | 1
+   1  | name | TEXT | 1 | NULL | 0
+
+## First 5 Data Rows:
+tagID  | name
+---------------
+9  | 'methodology'
+10  | 'contribution'
+11  | 'Claim'
+12  | 'limitations'
+13  | 'Results'
+
+#
+# Table: users
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | userID | INTEGER | 0 | NULL | 1
+   1  | name | TEXT | 1 | NULL | 0
+
+## First 5 Data Rows:
+userID  | name
+----------------
+17301851  | 'sakhadib'
+  <only 1 rows available>
+
+#
+# Table: version
+#
+## Columns (PRAGMA table_info):
+  cid | name | type | notnull | default_value | pk
+   0  | schema | TEXT | 0 | NULL | 1
+   1  | version | INT | 1 | NULL | 0
+
+## First 5 Data Rows:
+schema  | version
+-------------------
+'globalSchema'  | 32
+'system'  | 32
+'userdata'  | 123
+'triggers'  | 18
+'compatibility'  | 7
+
+--- End of dump ---
