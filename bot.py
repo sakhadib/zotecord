@@ -113,12 +113,31 @@ async def on_message(message: discord.Message):
         # Send a single formatted message with numbered highlights and a spacer
         label = config.COLOR_LABEL_MAP.get(color_name, color_name)
         intro = f"{user_mention} found '{label}' in the paper {f'[{title}]({url})' if url else title}"
-        # Build numbered bullet list of highlights
-        bullets = "\n".join(f"{i}. {text}" for i, text in enumerate(texts, start=1))
         # Send intro message
         await target_channel.send(f"{intro} ")
-        # Send findings in a second message
-        await target_channel.send(f"{bullets}")
+
+        # Send findings in smart chunks under 2000 chars, continuing enumeration
+        max_len = 2000
+        bullet_chunks = []
+        current_chunk = []
+        current_len = 0
+        start_idx = 1
+        for idx, text in enumerate(texts, start=1):
+            bullet = f"{idx}. {text}"
+            # If adding this bullet would exceed max_len, start a new chunk
+            if current_len + len(bullet) + 1 > max_len:
+                bullet_chunks.append(current_chunk)
+                current_chunk = []
+                current_len = 0
+            current_chunk.append(bullet)
+            current_len += len(bullet) + 1  # +1 for newline
+        if current_chunk:
+            bullet_chunks.append(current_chunk)
+
+        # Send each chunk, keeping enumeration correct
+        for chunk in bullet_chunks:
+            await target_channel.send("\n".join(chunk))
+
         # Spacer for visual gap before next paper
         await target_channel.send("\u200b")
 
