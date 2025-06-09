@@ -1,27 +1,15 @@
 import sqlite3
 import os
 
-# ───────────────────────────────────────────────────────────────────────────────
-# UPDATE THIS TO THE EXACT PATH OF YOUR Zotero sqlite DB (read-only).
-# For example (Windows):
-#    r"C:\Users\<YourUser>\Zotero\zotero.sqlite"
-# Or (macOS/Linux):
-#    "/Users/<YourUser>/Zotero/zotero.sqlite"
+# Update this path to match your Zotero installation
 ZOTERO_DB_PATH = r"C:\Users\sakha\Zotero\zotero.sqlite"
-# ───────────────────────────────────────────────────────────────────────────────
 
 def get_attachment_id_from_key(item_key: str) -> int | None:
-    """
-    Given a Zotero itemKey (e.g. "RFCM2DHI") that corresponds to a PDF attachment
-    (itemTypeID = 3), return the numeric itemID from items.key.
-    Returns None if not found or not an attachment.
-    """
     if not os.path.isfile(ZOTERO_DB_PATH):
         raise FileNotFoundError(f"Zotero DB not found at: {ZOTERO_DB_PATH}")
 
     conn = sqlite3.connect(f"file:{ZOTERO_DB_PATH}?mode=ro", uri=True)
     cur = conn.cursor()
-    # itemTypeID = 3 means “attachment” in your dump
     cur.execute("""
         SELECT itemID
         FROM items
@@ -32,28 +20,30 @@ def get_attachment_id_from_key(item_key: str) -> int | None:
     conn.close()
     return row[0] if row else None
 
+def hex_to_name(hex_color: str) -> str | None:
+    if not hex_color or not hex_color.startswith("#"):
+        return None
+    h = hex_color.lstrip("#").lower()
+    if len(h) == 3:
+        h = "".join(ch * 2 for ch in h)
+    mapping = {
+        "ffd400": "yellow",
+        "ff6666": "red",
+        "5fb236": "green",
+        "2ea8e5": "blue",
+        "a28ae5": "purple",
+    }
+    return mapping.get(h)
 
 def get_annotations_by_key(item_key: str) -> list[dict]:
-    """
-    Given a Zotero PDF-attachment key, fetch all highlight annotations for that
-    attachment (type = 1) from itemAnnotations. Returns a list of dicts:
-      [ { 'itemID': ..., 'text': "...", 'color': "yellow" }, ... ]
-    """
     attachment_id = get_attachment_id_from_key(item_key)
     if not attachment_id:
-        # No such attachment key (or not itemTypeID=3)
         return []
 
     conn = sqlite3.connect(f"file:{ZOTERO_DB_PATH}?mode=ro", uri=True)
     cur = conn.cursor()
-
-    # Fetch all highlight‐type rows for this attachment
-    # In your dump, `type = 1` means “highlight”
     cur.execute("""
-        SELECT 
-            itemID,    -- this is the primary key in itemAnnotations
-            text,
-            color
+        SELECT itemID, text, color
         FROM itemAnnotations
         WHERE parentItemID = ?
           AND type = 1
@@ -64,7 +54,6 @@ def get_annotations_by_key(item_key: str) -> list[dict]:
     annotations = []
     for ann_item_id, raw_text, raw_color in rows:
         color_name = hex_to_name(raw_color)
-        # Only keep ones that map into our five buckets
         if color_name:
             annotations.append({
                 "itemID": ann_item_id,
@@ -73,88 +62,102 @@ def get_annotations_by_key(item_key: str) -> list[dict]:
             })
     return annotations
 
-
-def hex_to_name(hex_color: str) -> str | None:
-    """
-    Convert a Zotero highlight color (hex string, e.g. "#ffd400", "#ff6666")
-    into one of: 'yellow', 'green', 'blue', 'purple', 'red'. Returns None if no match.
-
-    NB: We explicitly map both "#ffd400" (yellow) and "#ff6666" (orange/red)
-        into the "yellow" bucket (i.e. methods) because you requested that
-        yellow + orange both map → methods.
-    """
-    if not hex_color or not hex_color.startswith("#"):
-        return None
-
-    # Normalize to lowercase, strip '#'
-    h = hex_color.lstrip("#").lower()
-    # Expand 3‐digit shorthand (e.g. "#fc0") to 6‐digit ("ffcc00")
-    if len(h) == 3:
-        h = "".join(ch * 2 for ch in h)
-
-    # Exact‐match mapping of the five colors you saw in the dump
-    mapping = {
-        "ffd400": "yellow",   # Zotero's default yellow
-        "ff6666": "red",   # Zotero's default red/orange → remapped to "yellow"
-        "5fb236": "green",    # Zotero's default green
-        "2ea8e5": "blue",     # Zotero's default blue
-        "a28ae5": "purple",   # Zotero's default purple
-        # If Zotero ever uses a different hex code, add it here.
-    }
-    return mapping.get(h)
-
-
 def get_item_metadata(item_key: str) -> dict[str, str | None]:
-    """
-    Given a Zotero attachment key, return metadata for the parent paper: title and url.
-    """
-    # Get the attachment item ID
     attach_id = get_attachment_id_from_key(item_key)
     if not attach_id:
         return {"title": None, "url": None}
 
     conn = sqlite3.connect(f"file:{ZOTERO_DB_PATH}?mode=ro", uri=True)
     cur = conn.cursor()
-    # Find the parent paper item ID
-    cur.execute(
-        "SELECT parentItemID FROM itemAttachments WHERE itemID = ?",
-        (attach_id,)
-    )
+
+    cur.execute("SELECT parentItemID FROM itemAttachments WHERE itemID = ?", (attach_id,))
     row = cur.fetchone()
     parent_id = row[0] if row else None
     if not parent_id:
         conn.close()
         return {"title": None, "url": None}
 
-    # Fetch title from itemData via fieldsCombined
-    cur.execute(
-        """
-        SELECT v.value
-        FROM itemData d
-        JOIN itemDataValues v ON d.valueID = v.valueID
-        JOIN fieldsCombined f ON d.fieldID = f.fieldID
-        WHERE d.itemID = ?
-          AND f.fieldName = 'title'
-        """,
-        (parent_id,)
-    )
-    row = cur.fetchone()
-    title = row[0] if row else None
+    def fetch_field(field_name: str):
+        cur.execute("""
+            SELECT v.value
+            FROM itemData d
+            JOIN itemDataValues v ON d.valueID = v.valueID
+            JOIN fieldsCombined f ON d.fieldID = f.fieldID
+            WHERE d.itemID = ?
+              AND f.fieldName = ?
+        """, (parent_id, field_name))
+        row = cur.fetchone()
+        return row[0] if row else None
 
-    # Fetch URL (web link) if available
-    cur.execute(
-        """
-        SELECT v.value
-        FROM itemData d
-        JOIN itemDataValues v ON d.valueID = v.valueID
-        JOIN fieldsCombined f ON d.fieldID = f.fieldID
-        WHERE d.itemID = ?
-          AND f.fieldName = 'url'
-        """,
-        (parent_id,)
-    )
-    row = cur.fetchone()
-    url = row[0] if row else None
-
+    title = fetch_field("title")
+    url = fetch_field("url")
     conn.close()
     return {"title": title, "url": url}
+
+def format_bullets(texts: list[str]) -> str:
+    bullets = [f"{idx}. {text}" for idx, text in enumerate(texts, start=1)]
+    if bullets:
+        return "\n\n".join(bullets) + "\n\n"
+    return ""
+
+def get_full_metadata(item_key: str) -> dict:
+    attach_id = get_attachment_id_from_key(item_key)
+    if not attach_id:
+        return {}
+
+    conn = sqlite3.connect(f"file:{ZOTERO_DB_PATH}?mode=ro", uri=True)
+    cur = conn.cursor()
+    cur.execute("SELECT parentItemID FROM itemAttachments WHERE itemID = ?", (attach_id,))
+    row = cur.fetchone()
+    parent_id = row[0] if row else None
+    if not parent_id:
+        conn.close()
+        return {}
+
+    def fetch_field(field_name: str):
+        cur.execute("""
+            SELECT v.value
+            FROM itemData d
+            JOIN itemDataValues v ON d.valueID = v.valueID
+            JOIN fieldsCombined f ON d.fieldID = f.fieldID
+            WHERE d.itemID = ?
+              AND f.fieldName = ?
+        """, (parent_id, field_name))
+        row = cur.fetchone()
+        return row[0] if row else None
+
+    def fetch_authors():
+        cur.execute("""
+            SELECT c.firstName, c.lastName
+            FROM itemCreators ic
+            JOIN creators c ON ic.creatorID = c.creatorID
+            WHERE ic.itemID = ?
+            ORDER BY ic.orderIndex
+        """, (parent_id,))
+        return [f"{fn} {ln}".strip() for fn, ln in cur.fetchall()]
+
+    metadata = {
+        "title": fetch_field("title"),
+        "url": fetch_field("url"),
+        "authors": ", ".join(fetch_authors()),
+        "year": fetch_field("date"),
+        "venue": fetch_field("publicationTitle"),
+        "doi": fetch_field("DOI"),
+    }
+
+    annotations = get_annotations_by_key(item_key)
+    color_map = {"yellow": [], "green": [], "blue": [], "purple": [], "red": []}
+    for ann in annotations:
+        color_map[ann["color"]].append(ann["text"])
+
+    # Combine multiple highlights in a cell
+    metadata.update({
+        "methodology": format_bullets(color_map["yellow"]),
+        "contributions": format_bullets(color_map["green"]),
+        "result": format_bullets(color_map["blue"]),
+        "claims": format_bullets(color_map["purple"]),
+        "limitations": format_bullets(color_map["red"]),
+    })
+
+    conn.close()
+    return metadata
