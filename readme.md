@@ -34,7 +34,7 @@ ZotecoRD uses a sophisticated color-coding system to categorize research highlig
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/zotecord.git
+git clone https://github.com/sakhadib/zotecord.git
 cd zotecord
 ```
 
